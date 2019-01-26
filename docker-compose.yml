@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db1:
+    image: postgres:latest
+    environment:
+      -  POSTGRES_USER=postgres
+      -  POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    command: "bundle exec rails server"
+    restart : always
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db1
+    links:
+      - db1
