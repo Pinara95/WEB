@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @blogg.email %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @blogg.adresse %>
+</p>
+
+<p>
+  <strong>Plz:</strong>
+  <%= @blogg.plz %>
+</p>
+
+<%= link_to 'Edit', edit_blogg_path(@blogg) %> |
+<%= link_to 'Back', bloggs_path %>

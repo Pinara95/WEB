@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bloggs
   get '/' => 'home#index'
   get '/uber' => 'home#uber'
   get '/kontakt' => 'home#kontakt'
